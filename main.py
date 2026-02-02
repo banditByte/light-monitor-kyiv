@@ -29,6 +29,10 @@ DAYS_UA = {
     6: "Неділя"
 }
 
+# Separators
+SEP_SOURCE = "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧"
+SEP_DAY = "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■"
+
 SOURCE_GITHUB = "outage-data-ua"
 SOURCE_YASNO = "yasno"
 MAX_MESSAGES = 3
@@ -54,19 +58,19 @@ def get_kyiv_now() -> datetime:
 
 
 def format_hours(hours: float) -> str:
-    """Format hours with proper Ukrainian declension and bold number"""
+    """Format hours with proper Ukrainian declension"""
     if hours == int(hours):
         hours = int(hours)
     
     if isinstance(hours, float):
-        return f"<b>{hours}</b> години"
+        return f"{hours} години"
     
     if hours % 10 == 1 and hours % 100 != 11:
-        return f"<b>{hours}</b> година"
+        return f"{hours} година"
     elif hours % 10 in [2, 3, 4] and hours % 100 not in [12, 13, 14]:
-        return f"<b>{hours}</b> години"
+        return f"{hours} години"
     else:
-        return f"<b>{hours}</b> годин"
+        return f"{hours} годин"
 
 
 def format_time(minutes: int) -> str:
@@ -343,7 +347,7 @@ def format_schedule_message(
     date_str = date.strftime("%d.%m")
     sources_str = ", ".join(sources)
     
-    lines = [f"📆 Графік відключень на {date_str} ({day_name}) [{sources_str}]:"]
+    lines = [f"📆  {date_str} ({day_name}) [{sources_str}]:"]
     lines.append("")
     
     if special_status == "emergency":
@@ -359,7 +363,7 @@ def format_schedule_message(
     
     for period in periods:
         emoji = "🟩" if period["is_on"] else "🟠"
-        time_range = f"<code>{period['start']} - {period['end']}</code>"
+        time_range = f"{period['start']} - {period['end']}"
         hours_text = format_hours(period["hours"])
         
         lines.append(f"{emoji} {time_range} … ({hours_text})")
@@ -402,7 +406,7 @@ def format_group_message(
 ) -> Optional[str]:
     """Format message for one group - always show both sources if they differ"""
     group_num = group.replace("GPV", "")
-    header = f"============ група {group_num} ============"
+    header = f"============ ◉ {group_num} ◉ ============"
     
     # Collect all dates from both sources
     all_dates = set()
@@ -415,7 +419,9 @@ def format_group_message(
         return None
     
     sorted_dates = sorted(all_dates)[:2]
-    day_messages = []
+    
+    # Build messages grouped by date
+    day_blocks = []
     
     for date_str in sorted_dates:
         github_data = github_schedules.get(group, {}).get(date_str)
@@ -444,11 +450,13 @@ def format_group_message(
             yasno_slots
         )
         
+        source_messages = []
+        
         if both_normal and schedules_match(github_slots, yasno_slots):
             # Data matches exactly - show single combined block
             periods = slots_to_periods(github_slots)
             msg = format_schedule_message(periods, date, [SOURCE_GITHUB, SOURCE_YASNO])
-            day_messages.append(msg)
+            source_messages.append(msg)
         else:
             # Data differs or special status - show both sources separately
             
@@ -456,18 +464,24 @@ def format_group_message(
             if github_data:
                 msg = format_single_source_message(github_data, date, SOURCE_GITHUB)
                 if msg:
-                    day_messages.append(msg)
+                    source_messages.append(msg)
             
             # Yasno block
             if yasno_data:
                 msg = format_single_source_message(yasno_data, date, SOURCE_YASNO)
                 if msg:
-                    day_messages.append(msg)
+                    source_messages.append(msg)
+        
+        if source_messages:
+            # Join sources for same day with source separator
+            day_block = f"\n{SEP_SOURCE}\n".join(source_messages)
+            day_blocks.append(day_block)
     
-    if not day_messages:
+    if not day_blocks:
         return None
     
-    days_text = "\n\n-------------------------------------\n".join(day_messages)
+    # Join different days with day separator
+    days_text = f"\n{SEP_DAY}\n".join(day_blocks)
     return f"{header}\n{days_text}"
 
 
@@ -488,7 +502,7 @@ def format_full_message(
         return None
     
     now = get_kyiv_now()
-    update_time = now.strftime("%d.%m.%Y %H:%M")
+    update_time = now.strftime("%d.%m.%Y ⠅%H:%M")
     footer = f"\n\n🕐 Оновлено: {update_time} (Київ)"
     
     return "\n\n\n".join(all_group_messages) + footer
