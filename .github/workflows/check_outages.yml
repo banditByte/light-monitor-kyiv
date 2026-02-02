@@ -2,7 +2,7 @@ name: Check Outages and Post to Telegram
 
 on:
   schedule:
-    # Запуск каждые 2 часа
+    # Запуск каждые 3 часа
     - cron: '0 */3 * * *'
   workflow_dispatch:  # Ручной запуск
 
@@ -10,7 +10,6 @@ jobs:
   check-and-post:
     runs-on: ubuntu-latest
     
-    # Даем права на запись для сохранения хеша
     permissions:
       contents: write
     
