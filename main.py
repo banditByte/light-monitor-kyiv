@@ -33,7 +33,7 @@ DAYS_UA = {
 SEP_SOURCE = "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧"
 SEP_DAY = "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■"
 
-SOURCE_GITHUB = "outage-data-ua"
+SOURCE_GITHUB = "GitHub-ДТЕК"
 SOURCE_YASNO = "yasno"
 MAX_MESSAGES = 3
 
@@ -63,14 +63,14 @@ def format_hours(hours: float) -> str:
         hours = int(hours)
     
     if isinstance(hours, float):
-        return f"{hours} години"
+        return f"<b>{hours}</b> години"
     
     if hours % 10 == 1 and hours % 100 != 11:
-        return f"{hours} година"
+        return f"<b>{hours}</b> година"
     elif hours % 10 in [2, 3, 4] and hours % 100 not in [12, 13, 14]:
-        return f"{hours} години"
+        return f"<b>{hours}</b> години"
     else:
-        return f"{hours} годин"
+        return f"<b>{hours}</b> годин"
 
 
 def format_time(minutes: int) -> str:
@@ -363,7 +363,7 @@ def format_schedule_message(
     
     for period in periods:
         emoji = "🟩" if period["is_on"] else "🟠"
-        time_range = f"{period['start']} - {period['end']}"
+        time_range = f"<code>{period['start']} - {period['end']}</code>"
         hours_text = format_hours(period["hours"])
         
         lines.append(f"{emoji} {time_range} … ({hours_text})")
@@ -406,7 +406,7 @@ def format_group_message(
 ) -> Optional[str]:
     """Format message for one group - always show both sources if they differ"""
     group_num = group.replace("GPV", "")
-    header = f"============ ◉ {group_num} ◉ ============"
+    header = f"============ ◉ <b>{group_num}</b> ◉ ============"
     
     # Collect all dates from both sources
     all_dates = set()
@@ -474,14 +474,14 @@ def format_group_message(
         
         if source_messages:
             # Join sources for same day with source separator
-            day_block = f"\n{SEP_SOURCE}\n".join(source_messages)
+            day_block = f"\n\n{SEP_SOURCE}\n".join(source_messages)
             day_blocks.append(day_block)
     
     if not day_blocks:
         return None
     
     # Join different days with day separator
-    days_text = f"\n{SEP_DAY}\n".join(day_blocks)
+    days_text = f"\n\n{SEP_DAY}\n".join(day_blocks)
     return f"{header}\n{days_text}"
 
 
