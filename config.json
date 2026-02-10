@@ -21,10 +21,11 @@
     "icons": {
       "power_on": "☑️",
       "power_off": "✖️",
-      "calendar": "🗓",
-      "clock": "⏰",
+      "calendar": "📆",
+      "clock": "🕐",
       "emergency": "⚠️",
-      "pending": "⏳"
+      "pending": "⏳",
+      "updated": "Оновлено"
     },
     "labels": {
       "power_on": "Є світло",
