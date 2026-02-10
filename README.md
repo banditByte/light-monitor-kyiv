@@ -78,6 +78,37 @@
 3. **Пересвідчитись**, що репозиторій має необхідні дозволи  
    ("Allow all actions and reusable workflows").
 
+##### Налаштування регіону
+У файлі "config.json" можна налаштувати регіон:
+```
+  "groups": ["GPV12.1", "GPV18.1"],
+  "region": "kyiv",   //   <== 
+  
+  "sources": {
+    "github": {
+      "enabled": true,
+      "name": "GitHub-ДТЕК"
+    },
+    "yasno": {
+      "enabled": false
+    }
+  },
+```
+
+"region": "kyiv" // місто Київ
+
+"region": "kyiv-region" // Київська область
+
+"region": "dnipro" // місто Дніпро
+
+"region": "odesa" // місто Одеса
+
+Про всяк випадок вимкніть у sources "yasno" ("enabled": false), залишивши лише "github".
+
+Дивіться актуальні назви для регіонів у "https://github.com/Baskerville42/outage-data-ua/tree/main/data"
+
+Налаштування для регіонів я не тестив, тож ...
+
 ##### Налаштування інтервалу запуску
 Інтервал запуску налаштовується у файлі .github/workflows/check_outages.yml
 ```
