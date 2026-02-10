@@ -197,12 +197,12 @@ light-monitor-kyiv/
 
 **Мапи відключень:**
 - [Svitlobot Map](https://svitlobot.pp.ua/map.php)
-- [Альтернативна мапа](https://svitlobot.obbdev.com/Map)
+- [Map - Svitlobot](https://svitlobot.obbdev.com/Map)
 - [Мапа з часовою шкалою](https://power.area.pp.ua/)
 
 **Інші сервіси:**
-- [Без світла](https://bezsvitla.com.ua/)
-- [ICS-календар відключень](https://elout-ck.vercel.app/)
-- [Календар для Києва](https://outages-calendar.aisaiev.net/)
+- [«Без світла» — графік відключень електроенергії в Україні](https://bezsvitla.com.ua/)
+- [Графік відключень електроенергії у форматі ICS для календарів (iOS, Google Calendar, Outlook)](https://elout-ck.vercel.app/)
+- [Календар відключень електроенергії у Києві](https://outages-calendar.aisaiev.net/)
 
 Дякую спільноті @svitlobot_api за нагадування: якщо хочеш, щоб усе працювало саме так, як тобі потрібно — зроби це сам ¯\\_(ツ)_/¯
