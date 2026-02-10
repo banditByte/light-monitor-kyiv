@@ -1,9 +1,13 @@
 {
-  "groups": [
-    "GPV12.1",
-    "GPV18.1"
-  ],
-  "region": "kyiv",
+  "settings": {
+    "region": "kyiv",
+    "groups": [
+      "GPV12.1",
+      "GPV18.1"
+    ],
+    "style": "table",
+    "max_messages": 3
+  },
   "sources": {
     "github": {
       "enabled": true,
@@ -11,40 +15,39 @@
     },
     "yasno": {
       "enabled": false,
-      "name": "yasno",
+      "name": "Yasno",
       "region_id": "25",
       "dso_id": "902"
     }
   },
-  "display": {
-    "format": "table",
+  "ui": {
     "icons": {
-      "power_on": "☑️",
-      "power_off": "✖️",
       "calendar": "📆",
       "clock": "🕐",
+      "on": "☑️",
+      "off": "✖️",
+      "on_list": "☑️",
+      "off_list": "✖️",
       "emergency": "⚠️",
       "pending": "⏳",
-      "updated": "Оновлено"
+      "separator": "⠅"
     },
-    "labels": {
-      "power_on": "Є світло",
-      "power_off": "Нема світла",
-      "emergency": "Аварійне Відключення!",
-      "pending": "Графік ще не опублікований"
+    "text": {
+      "on": "Є",
+      "off": "Нема",
+      "on_full": "Світло є",
+      "off_full": "Світла нема",
+      "emergency": "АВАРІЙНЕ ВІДКЛЮЧЕННЯ!",
+      "pending": "Очікується інформація про графік",
+      "updated": "Оновлено",
+      "time_header": "Час",
+      "hours_short": "г"
     },
-    "separators": {
-      "source": "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧",
-      "day": "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■",
-      "table_row": "----------------------------------------------"
-    },
-    "templates": {
-      "group_header": "========== ◉ {group} ◉ ==========",
-      "day_header": "{icon}  {date} ({weekday}) [{sources}]:"
+    "format": {
+      "header_template": "========== ◉ {group} ◉ ==========",
+      "separator_source": "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧",
+      "separator_day": "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■",
+      "table_separator": "-"
     }
-  },
-  "telegram": {
-    "max_messages": 3,
-    "pin_messages": true
   }
 }
