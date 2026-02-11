@@ -1,11 +1,9 @@
 {
   "settings": {
     "region": "kyiv",
-    "groups": [
-      "GPV12.1",
-      "GPV18.1"
-    ],
+    "groups": ["GPV12.1", "GPV18.1"],
     "style": "table",
+    "table_format": "code_lines",
     "max_messages": 3,
     "show_intervals_detail": true
   },
@@ -33,11 +31,9 @@
       "pending": "⏳",
       "separator": "⠅",
       "light_on": "☀",
-      "light_off": " ⃠ "
+      "light_off": "🔘"
     },
     "text": {
-      "on": "Є",
-      "off": "Нема",
       "on_full": "Світло є",
       "off_full": "Світла нема",
       "on_detail": "Світло буде",
@@ -52,7 +48,8 @@
       "separator_source": "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧",
       "separator_day": "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■",
       "separator_footer": "────────────────────",
-      "table_separator": "-"
+      "table_separator": "-",
+      "detail_indent": "   "
     },
     "spacing": {
       "before_separator_source": 1,
