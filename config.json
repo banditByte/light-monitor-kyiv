@@ -45,16 +45,16 @@
     },
     "format": {
       "header_template": "========== ❖ {group} ❖ ==========",
-      "separator_source": "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧",
-      "separator_day": "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■",
+      "separator_source": "✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧",
+      "separator_day": "■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■  ■",
       "separator_footer": "────────────────────",
       "table_separator": "-",
       "detail_indent": "   "
     },
     "spacing": {
-      "before_separator_source": 1,
+      "before_separator_source": 2,
       "before_separator_day": 2,
-      "before_summary": 1,
+      "before_summary": 2,
       "before_footer": 2,
       "after_footer_separator": 1
     }
