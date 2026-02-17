@@ -1,59 +1,6 @@
 {
   "github": {
     "GPV12.1": {
-      "2026-02-17": {
-        "status": "normal",
-        "slots": [
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false
-        ]
-      },
       "2026-02-18": {
         "status": "normal",
         "slots": [
@@ -106,62 +53,13 @@
           false,
           true
         ]
+      },
+      "2026-02-19": {
+        "status": "pending",
+        "slots": null
       }
     },
     "GPV18.1": {
-      "2026-02-17": {
-        "status": "normal",
-        "slots": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true
-        ]
-      },
       "2026-02-18": {
         "status": "normal",
         "slots": [
@@ -214,64 +112,15 @@
           true,
           false
         ]
+      },
+      "2026-02-19": {
+        "status": "pending",
+        "slots": null
       }
     }
   },
   "yasno": {
     "GPV12.1": {
-      "2026-02-17": {
-        "status": "normal",
-        "slots": [
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false
-        ]
-      },
       "2026-02-18": {
         "status": "normal",
         "slots": [
@@ -324,62 +173,13 @@
           false,
           true
         ]
+      },
+      "2026-02-19": {
+        "status": "pending",
+        "slots": null
       }
     },
     "GPV18.1": {
-      "2026-02-17": {
-        "status": "normal",
-        "slots": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          true,
-          true,
-          true,
-          true
-        ]
-      },
       "2026-02-18": {
         "status": "normal",
         "slots": [
@@ -432,6 +232,10 @@
           true,
           false
         ]
+      },
+      "2026-02-19": {
+        "status": "pending",
+        "slots": null
       }
     }
   }
