@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+
+
+    <title>Визначення номеру черги за адресою</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 30px;
+            border-bottom: 1px solid #f0f0f0;
+            background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+			margin: 0 auto;
+			width: fit-content;
+        }
+
+        .card-header h2 i {
+            color: #3498db;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .input-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .input-field {
+            position: relative;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background-color: #f8fafc;
+            color: #2d3748;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+            background-color: white;
+        }
+
+        .input-field input::placeholder {
+            color: #a0aec0;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+        }
+
+        .dropdown-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-top: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+            border-bottom: 1px solid #f7fafc;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f7fafc;
+        }
+
+        .dropdown-item.selected {
+            background-color: #edf7ff;
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .result-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #d1ecff;
+            text-align: center;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+/*
+            visibility: hidden;
+            opacity: 0;
+*/
+        }
+
+        .result-container.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .result-container p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #a0aec0;
+        }
+
+        .status-dot.active {
+            background-color: #48bb78;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .instructions h3 {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instructions ul {
+            padding-left: 20px;
+            color: #718096;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #a0aec0;
+        }
+
+        .empty-state i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card-header, .card-content {
+                padding: 20px;
+            }
+            
+            .result-value {
+                font-size: 1.7rem;
+            }
+        }
+		
+		/* Стилі для кнопки reset */
+        #reset-container {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        #reset-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        #reset-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Loading spinner в статусі (опціонально) */
+        .loading {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+	
+<!--
+        <div class="header">
+            <h1>Визначення черги за адресою</h1>
+        </div>
+-->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-map-marker-alt"></i> Визначити свою чергу за адресою</h2>
+            </div>
+           
+            <div class="card-content">
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="street-input">Вулиця</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="street-input" placeholder="Почніть вводити назву вулиці..." autocomplete="off">
+                            <div class="input-icon"><i class="fas fa-road"></i></div>
+                        </div>
+                        <div id="street-results" class="dropdown-results"></div>
+                    </div>
+                   
+                    <div class="input-field">
+                        <label for="house-input">Будинок</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="house-input" placeholder="Спочатку виберіть вулицю" autocomplete="off" disabled>
+                            <div class="input-icon"><i class="fas fa-home"></i></div>
+                        </div>
+                        <div id="house-results" class="dropdown-results"></div>
+                    </div>
+                </div>
+               
+                <div id="group-result" class="result-container">
+                    <p>Ваша черга:</p>
+                    <span class="result-value">--</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span id="status-text">Оберіть адресу для відображення черги</span>
+                    </div>
+                </div>
+
+                <div id="reset-container">
+                    <button id="reset-button"><i class="fas fa-arrows-rotate"></i> Почати спочатку</button>
+                </div>
+               
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> Як це працює:</h3>
+                    <ul>
+                        <li>Почніть вводити назву вулиці</li>
+                        <li>Якщо з’явиться список — оберіть потрібну вулицю</li>
+                        <li>Після вибору вулиці введіть номер будинку</li>
+                        <li>Якщо з’явиться список, оберіть потрібний будинок</li>
+                        <li>У іншому випадку скористайтесь <a href="https://sergeymaximenko.github.io/SetTimeGenerator/GetGroupForKiev.html">альтернативою</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="footer">
+            <p>© 2026. Підтримуй захисників України донатом або в будь-який інший спосіб!</p>
+        </div>
+    </div>
+    <script>
+        (function() {
+            // Application state
+            let selectedStreetId = null;
+            let selectedStreetValue = null;
+            let selectedHouseId = null;
+            let selectedHouseValue = null;
+            let streetDebounce = null;
+            let houseDebounce = null;
+
+            const API_BASE = 'https://outages-calendar.aisaiev.net/api';
+			const соrsProxy = 'http://140.245.231.60:8080/proxy?url=';
+			const API_URL = соrsProxy + API_BASE
+
+            // DOM elements
+            const streetInput = document.getElementById('street-input');
+            const houseInput = document.getElementById('house-input');
+            const streetResults = document.getElementById('street-results');
+            const houseResults = document.getElementById('house-results');
+            const resultValue = document.querySelector('.result-value');
+            const statusDot = document.querySelector('.status-dot');
+            const statusText = document.getElementById('status-text');
+            const resetContainer = document.getElementById('reset-container');
+            const resetButton = document.getElementById('reset-button');
+
+            // Full reset (used for "Почати спочатку")
+            function resetForm() {
+                streetInput.value = '';
+                houseInput.value = '';
+                houseInput.disabled = true;
+                houseInput.placeholder = "Спочатку виберіть вулицю";
+
+                selectedStreetId = null;
+                selectedStreetValue = null;
+                selectedHouseId = null;
+                selectedHouseValue = null;
+
+                streetResults.style.display = 'none';
+                streetResults.innerHTML = '';
+                houseResults.style.display = 'none';
+                houseResults.innerHTML = '';
+
+                resultValue.textContent = '--';
+                statusText.textContent = 'Оберіть адресу для відображення черги';
+                statusDot.classList.remove('active');
+                resetContainer.style.display = 'none';
+
+                streetInput.focus();
+            }
+
+            // Partial reset (only below street field)
+            function resetBelowStreet() {
+                houseInput.disabled = true;
+                houseInput.value = '';
+                houseInput.placeholder = "Спочатку виберіть вулицю";
+
+                selectedStreetId = null;
+                selectedStreetValue = null;
+                selectedHouseId = null;
+                selectedHouseValue = null;
+
+                houseResults.style.display = 'none';
+                houseResults.innerHTML = '';
+
+                resultValue.textContent = '--';
+                statusText.textContent = 'Оберіть або уточніть вулицю';
+                statusDot.classList.remove('active');
+                resetContainer.style.display = 'none';
+            }
+
+            resetButton.addEventListener('click', resetForm);
+
+            // Render streets
+            function renderStreetResults(streets) {
+                streetResults.innerHTML = '';
+                if (streets.length === 0) {
+                    streetResults.style.display = 'none';
+                    return;
+                }
+
+                streets.forEach(street => {
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item street-item';
+                    item.dataset.id = street.id;
+                    item.dataset.value = street.value;
+                    item.innerHTML = `<i class="fas fa-road" style="margin-right: 10px; color: #718096;"></i>${street.value}`;
+                    item.addEventListener('click', () => {
+                        selectedStreetId = street.id;
+                        selectedStreetValue = street.value;
+                        streetInput.value = street.value;
+                        streetResults.style.display = 'none';
+
+                        houseInput.disabled = false;
+                        houseInput.placeholder = "Введіть номер будинку...";
+                        houseInput.focus();
+
+                        // Reset house part
+                        houseInput.value = '';
+                        selectedHouseId = null;
+                        selectedHouseValue = null;
+                        houseResults.style.display = 'none';
+                        houseResults.innerHTML = '';
+
+                        statusText.textContent = "Введіть номер будинку";
+                        resultValue.textContent = '--';
+                        resetContainer.style.display = 'none';
+                    });
+                    streetResults.appendChild(item);
+                });
+
+                streetResults.style.display = 'block';
+            }
+
+            // Render houses
+            function renderHouseResults(houses) {
+                houseResults.innerHTML = '';
+                if (houses.length === 0) {
+                    houseResults.style.display = 'none';
+                    return;
+                }
+
+                houses.forEach(house => {
+                    const item = document.createElement('div');
+                    item.className = 'dropdown-item house-item';
+                    item.dataset.id = house.id;
+                    item.dataset.value = house.value;
+                    item.innerHTML = `<i class="fas fa-home" style="margin-right: 10px; color: #718096;"></i>Будинок ${house.value}`;
+                    item.addEventListener('click', async () => {
+                        selectedHouseId = house.id;
+                        selectedHouseValue = house.value;
+                        houseInput.value = house.value;
+                        houseResults.style.display = 'none';
+
+                        statusText.innerHTML = '<span class="loading"></span>Визначення черги...';
+                        resultValue.textContent = 'Завантаження...';
+
+                        try {
+                            const url = `${API_URL}/address/group?streetId=${selectedStreetId}&houseId=${selectedHouseId}`;
+                            const response = await fetch(url);
+                            if (!response.ok) throw new Error('Network error');
+
+                            const data = await response.json();
+                            const groupId = `${data.group}.${data.subgroup}`;
+
+                            resultValue.textContent = groupId;
+                            statusText.textContent = "Чергу успішно визначено";
+                            statusDot.classList.add('active');
+                            resetContainer.style.display = 'block';
+                        } catch (error) {
+                            console.error('Group fetch error:', error);
+                            resultValue.textContent = 'Помилка';
+                            statusText.textContent = "Не вдалося визначити чергу";
+                        }
+                    });
+                    houseResults.appendChild(item);
+                });
+
+                houseResults.style.display = 'block';
+            }
+
+            // Street input handler
+            streetInput.addEventListener('input', () => {
+                const query = streetInput.value.trim();
+                clearTimeout(streetDebounce);
+
+                // Hide both dropdowns and reset everything below street
+                streetResults.style.display = 'none';
+                houseResults.style.display = 'none';
+                resetBelowStreet();
+
+                if (query.length < 3) {
+                    statusText.textContent = "Введіть мінімум 3 символи";
+                    return;
+                }
+
+                statusText.innerHTML = '<span class="loading"></span>Пошук вулиць...';
+
+                streetDebounce = setTimeout(async () => {
+                    try {
+                        const url = `${API_URL}/streets/search?query=${encodeURIComponent(query)}`;
+                        const response = await fetch(url);
+                        if (!response.ok) throw new Error('Network error');
+
+                        const streets = await response.json();
+
+                        if (streets.length === 0) {
+                            statusText.textContent = "Вулиць не знайдено. Уточніть запит.";
+                        } else {
+                            statusText.textContent = `Знайдено ${streets.length} варіант(и). Виберіть зі списку`;
+                        }
+
+                        renderStreetResults(streets);
+                    } catch (error) {
+                        console.error('Street search error:', error);
+                        statusText.textContent = "Помилка пошуку. Спробуйте пізніше.";
+                    }
+                }, 300);
+            });
+
+            // House input handler
+            houseInput.addEventListener('input', () => {
+                if (!selectedStreetId) return;
+
+                const query = houseInput.value.trim();
+                clearTimeout(houseDebounce);
+
+                houseResults.style.display = 'none';
+                resultValue.textContent = '--';
+                resetContainer.style.display = 'none';
+
+                if (query.length === 0) {
+                    statusText.textContent = "Введіть номер будинку";
+                    return;
+                }
+
+                statusText.innerHTML = '<span class="loading"></span>Пошук будинків...';
+
+                houseDebounce = setTimeout(async () => {
+                    try {
+                        const url = `${API_URL}/houses/search?streetId=${selectedStreetId}&query=${encodeURIComponent(query)}`;
+                        const response = await fetch(url);
+                        if (!response.ok) throw new Error('Network error');
+
+                        const houses = await response.json();
+
+                        if (houses.length === 0) {
+                            statusText.textContent = "Будинків не знайдено. Уточніть номер.";
+                        } else {
+                            statusText.textContent = `Знайдено ${houses.length} варіант(и). Виберіть зі списку`;
+                        }
+
+                        renderHouseResults(houses);
+                    } catch (error) {
+                        console.error('House search error:', error);
+                        statusText.textContent = "Помилка пошуку. Спробуйте пізніше.";
+                    }
+                }, 300);
+            });
+
+            // Close dropdowns on outside click
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#street-input') && !e.target.closest('#street-results')) {
+                    streetResults.style.display = 'none';
+                }
+                if (!e.target.closest('#house-input') && !e.target.closest('#house-results')) {
+                    houseResults.style.display = 'none';
+                }
+            });
+
+            // Card animation
+            document.addEventListener('DOMContentLoaded', () => {
+                const card = document.querySelector('.card');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+
+            // Initial state
+            resetForm();
+        })();
+    </script>
+</body>
+</html>
